@@ -19,6 +19,9 @@ function randomBackground() {
   console.log(typeof cssColor);
   // value of cssColor is return value of rgfToCSS function
 
+  document.body.style.backgroundColor = cssColor;
+  // changing background color to cssColor value
+
   function randomColor() {
     let r = Math.floor(Math.random() * 255);
     let g = Math.floor(Math.random() * 255);
