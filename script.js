@@ -11,7 +11,13 @@ function init() {
 function randomBackground() {
   let rgb = randomColor();
   console.log(rgb);
+  console.log(typeof rgb);
   // value of rgb is return value of randomColor function
+
+  let cssColor = rgbToCSS(rgb);
+  console.log(cssColor);
+  console.log(typeof cssColor);
+  // value of cssColor is return value of rgfToCSS function
 
   function randomColor() {
     let r = Math.floor(Math.random() * 255);
@@ -21,5 +27,10 @@ function randomBackground() {
     //and each has value of variable r,g,b (random number)
     return { r: r, g: g, b: b };
   }
-  function rgbToCSS(rgb) {}
+  function rgbToCSS(rgb) {
+    return `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+    // parameter takes rgb(object) as argument
+    // and extract value of each property (number)
+    // and put it into string - css color written format
+  }
 }
